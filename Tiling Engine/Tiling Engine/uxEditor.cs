@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Tiling_Engine
 {
-    public partial class Form1 : Form
+    public partial class uxMap : Form
     {
-        public Form1()
+        public uxMap()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
