@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cell.cs" />
+    <Compile Include="City.cs" />
     <Compile Include="uxEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,7 +56,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tiles.cs" />
     <EmbeddedResource Include="uxEditor.resx">
       <DependentUpon>uxEditor.cs</DependentUpon>
     </EmbeddedResource>
