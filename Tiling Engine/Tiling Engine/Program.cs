@@ -16,7 +16,7 @@ namespace Tiling_Engine
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new uxMap());
+            Application.Run(new uxMainMenu());
         }
     }
 }
