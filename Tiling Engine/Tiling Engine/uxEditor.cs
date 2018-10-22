@@ -10,16 +10,30 @@ using System.Windows.Forms;
 
 namespace Tiling_Engine
 {
-    public partial class uxMap : Form
+    public partial class uxEditor : Form
     {
-        public uxMap()
+        private World _map;
+
+        public uxEditor()
         {
             InitializeComponent();
+            _map = new World();
+        }
+
+        public World ReturnMap()
+        {
+            return _map;
+        }
+
+        public void SetMap(World m)
+        {
+            _map = m;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

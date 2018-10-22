@@ -11,7 +11,6 @@ namespace Tiling_Engine
     {
         private Label _label;
         private bool _visible;
-        public enum Region{N,G,D,M,O,T};
         private Tuple<int, int> _coor;
 
         public Cell(int x, int y)
@@ -20,31 +19,31 @@ namespace Tiling_Engine
             _label = new Label();
         }
 
-        public void ChangeColor(Region R)
+        public void ChangeColor(int color)
         {
-            if(R == Region.N)
+            if(color == 0)
             {
                 _label.BackColor = System.Drawing.Color.DarkGray;
             }
-            else if (R == Region.G)
+            else if (color == 1)
             {
                 _label.BackColor = System.Drawing.Color.Green;
             }
-            else if (R == Region.D)
+            else if (color == 2)
             {
                 _label.BackColor = System.Drawing.Color.Green;
             }
-            else if (R == Region.M)
+            else if (color == 3)
             {
                 _label.BackColor = System.Drawing.Color.LightGray;
             }
-            else if (R == Region.O)
+            else if (color == 4)
             {
                 _label.BackColor = System.Drawing.Color.Blue;
             }
-            else if (R == Region.T)
+            else if (color == 5)
             {
-                _label.BackColor = System.Drawing.Color.LightBlue;
+                _label.BackColor = System.Drawing.Color.White;
             }
         }
 

@@ -62,6 +62,7 @@
     <Compile Include="uxMainMenu.Designer.cs">
       <DependentUpon>uxMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="World.cs" />
     <EmbeddedResource Include="uxEditor.resx">
       <DependentUpon>uxEditor.cs</DependentUpon>
     </EmbeddedResource>

@@ -43,6 +43,7 @@
             this.uxNewM.TabIndex = 0;
             this.uxNewM.Text = "New Map";
             this.uxNewM.UseVisualStyleBackColor = true;
+            this.uxNewM.Click += new System.EventHandler(this.uxNewM_Click);
             // 
             // uxLoadM
             // 
@@ -52,6 +53,7 @@
             this.uxLoadM.TabIndex = 1;
             this.uxLoadM.Text = "Load Map";
             this.uxLoadM.UseVisualStyleBackColor = true;
+            this.uxLoadM.Click += new System.EventHandler(this.uxLoadM_Click);
             // 
             // uxEditM
             // 
@@ -61,6 +63,7 @@
             this.uxEditM.TabIndex = 2;
             this.uxEditM.Text = "Edit Map";
             this.uxEditM.UseVisualStyleBackColor = true;
+            this.uxEditM.Click += new System.EventHandler(this.uxEditM_Click);
             // 
             // uxViewM
             // 
@@ -70,6 +73,7 @@
             this.uxViewM.TabIndex = 3;
             this.uxViewM.Text = "View Map";
             this.uxViewM.UseVisualStyleBackColor = true;
+            this.uxViewM.Click += new System.EventHandler(this.uxViewM_Click);
             // 
             // uxSandQ
             // 
@@ -79,11 +83,13 @@
             this.uxSandQ.TabIndex = 4;
             this.uxSandQ.Text = "Save and Quit";
             this.uxSandQ.UseVisualStyleBackColor = true;
+            this.uxSandQ.Click += new System.EventHandler(this.uxSandQ_Click);
             // 
             // uxMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(375, 529);
             this.Controls.Add(this.uxSandQ);
             this.Controls.Add(this.uxViewM);
@@ -92,6 +98,7 @@
             this.Controls.Add(this.uxNewM);
             this.Name = "uxMainMenu";
             this.Text = "uxMainMenu";
+            this.Load += new System.EventHandler(this.uxNewM_Click);
             this.ResumeLayout(false);
 
         }

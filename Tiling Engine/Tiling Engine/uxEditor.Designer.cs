@@ -1,6 +1,6 @@
 ﻿namespace Tiling_Engine
 {
-    partial class uxMap
+    partial class uxEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // uxMap
+            // uxEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 590);
-            this.Name = "uxMap";
-            this.Text = "uxEditor";
+            this.Name = "uxEditor";
+            this.Text = "Map Editor";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
