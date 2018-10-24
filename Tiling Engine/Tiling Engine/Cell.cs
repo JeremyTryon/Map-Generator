@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Tiling_Engine
 {
-    class Cell
+    public class Cell
     {
         private Label _label;
         private bool _visible;
@@ -17,6 +17,7 @@ namespace Tiling_Engine
         {
             _coor = new Tuple<int, int>(x, y);
             _label = new Label();
+            _visible = false;
         }
 
         public void ChangeColor(int color)

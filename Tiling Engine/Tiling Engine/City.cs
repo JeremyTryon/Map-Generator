@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace Tiling_Engine
 {
-    class City
+    public class City
     {
         private Cell[,] _grid;
-        private List<City> _towns;
+        //private List<City> _towns;
         private Tuple<int, int> _coor;
 
         public City(int x, int y, int size)
@@ -24,12 +24,6 @@ namespace Tiling_Engine
                     _grid[i, j] = new Cell(i, j);
                 }
             }
-            Edit();
-        }
-
-        public void Edit()
-        {
-            //opens map in the editor and sets map to old map
         }
 
         public Tuple<int,int> GetLocation()

@@ -98,7 +98,6 @@
             this.Controls.Add(this.uxNewM);
             this.Name = "uxMainMenu";
             this.Text = "uxMainMenu";
-            this.Load += new System.EventHandler(this.uxNewM_Click);
             this.ResumeLayout(false);
 
         }

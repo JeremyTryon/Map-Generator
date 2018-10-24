@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tiling_Engine
 {
-    class World
+    public class World
     {
         private Cell[,] _grid;
         private List<City> _citys;
@@ -15,6 +15,7 @@ namespace Tiling_Engine
 
         public World()
         {
+            _grid = new Cell[50, 50];
             for(int i = 0; i<50; i++)
             {
                 for(int j =0; j<50; j++)
@@ -64,6 +65,11 @@ namespace Tiling_Engine
         {
             Tuple<int, int> temp = new Tuple<int, int>(x, y);
             _citys.RemoveAll(c => c.GetLocation() == temp);
+        }
+
+        public void HideCell(int x, int y, bool b)
+        {
+            _grid[x, y].setVisible(b);
         }
 
     }

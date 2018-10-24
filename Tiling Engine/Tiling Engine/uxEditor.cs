@@ -35,5 +35,25 @@ namespace Tiling_Engine
 
         }
 
+        private void uxGenerate_Click(object sender, EventArgs e)
+        {
+            _map.Generate();
+        }
+
+        private void uxBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void uxBiomes_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton button = (RadioButton)sender;
+            if (button.Checked)
+            {
+                _map.SetMouseColor(Convert.ToInt16(button.Tag));
+
+            }
+        }
+
     }
 }
