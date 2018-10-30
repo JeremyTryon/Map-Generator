@@ -30,7 +30,6 @@
         {
             this.uxGenerate = new System.Windows.Forms.Button();
             this.uxBack = new System.Windows.Forms.Button();
-            this.uxMapPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.uxRBlank = new System.Windows.Forms.RadioButton();
             this.uxRGrass = new System.Windows.Forms.RadioButton();
             this.uxRDesert = new System.Windows.Forms.RadioButton();
@@ -59,13 +58,6 @@
             this.uxBack.Text = "Back";
             this.uxBack.UseVisualStyleBackColor = true;
             this.uxBack.Click += new System.EventHandler(this.uxBack_Click);
-            // 
-            // uxMapPanel
-            // 
-            this.uxMapPanel.Location = new System.Drawing.Point(12, 12);
-            this.uxMapPanel.Name = "uxMapPanel";
-            this.uxMapPanel.Size = new System.Drawing.Size(751, 566);
-            this.uxMapPanel.TabIndex = 3;
             // 
             // uxRBlank
             // 
@@ -170,7 +162,6 @@
             this.Controls.Add(this.uxRDesert);
             this.Controls.Add(this.uxRGrass);
             this.Controls.Add(this.uxRBlank);
-            this.Controls.Add(this.uxMapPanel);
             this.Controls.Add(this.uxBack);
             this.Controls.Add(this.uxGenerate);
             this.Name = "uxEditor";
@@ -184,7 +175,6 @@
         #endregion
         private System.Windows.Forms.Button uxGenerate;
         private System.Windows.Forms.Button uxBack;
-        private System.Windows.Forms.FlowLayoutPanel uxMapPanel;
         private System.Windows.Forms.RadioButton uxRBlank;
         private System.Windows.Forms.RadioButton uxRGrass;
         private System.Windows.Forms.RadioButton uxRDesert;

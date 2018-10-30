@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.ComponentModel;
 
 namespace Tiling_Engine
 {
@@ -16,7 +18,13 @@ namespace Tiling_Engine
         public Cell(int x, int y)
         {
             _coor = new Tuple<int, int>(x, y);
+
             _label = new Label();
+            _label.BackColor = System.Drawing.Color.Pink;
+            _label.BorderStyle = BorderStyle.FixedSingle;
+            _label.MaximumSize = new System.Drawing.Size(20, 20);
+            _label.Margin = new Padding(0, 0, 0, 0);
+
             _visible = false;
         }
 
@@ -51,6 +59,11 @@ namespace Tiling_Engine
         public bool IsVisible()
         {
             return _visible;
+        }
+
+        public Label ReturnLabel()
+        {
+            return _label;
         }
 
         public void setVisible(bool b)

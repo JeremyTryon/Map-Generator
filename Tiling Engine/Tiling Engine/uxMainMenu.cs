@@ -21,14 +21,16 @@ namespace Tiling_Engine
             InitializeComponent();
             uxEditM.Enabled = false;
             uxViewM.Enabled = false;
+            _map = new World();
         }
 
         private void uxNewM_Click(object sender, EventArgs e)
         {
             editor = new uxEditor();
             this.Hide();
-            editor.Show();
+            editor.ShowDialog();
             _map = editor.ReturnMap();
+            this.Show();
             uxEditM.Enabled = true;
             uxViewM.Enabled = true;
         }
@@ -43,8 +45,11 @@ namespace Tiling_Engine
 
         private void uxEditM_Click(object sender, EventArgs e)
         {
+            this.Hide();
             editor.SetMap(_map);
+            editor.ShowDialog();
             _map = editor.ReturnMap();
+            this.Show();
         }
 
         private void uxViewM_Click(object sender, EventArgs e)

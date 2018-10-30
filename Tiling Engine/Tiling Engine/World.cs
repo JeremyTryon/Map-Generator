@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Tiling_Engine
 {
@@ -11,14 +12,15 @@ namespace Tiling_Engine
         private Cell[,] _grid;
         private List<City> _citys;
         private int _mouseColor;
+        private int _size = 50;
         private const int _citysize = 30;
 
         public World()
         {
-            _grid = new Cell[50, 50];
-            for(int i = 0; i<50; i++)
+            _grid = new Cell[_size, _size];
+            for(int i = 0; i<_size; i++)
             {
-                for(int j =0; j<50; j++)
+                for(int j =0; j<_size; j++)
                 {
                     _grid[i, j] = new Cell(i, j);
                 }
@@ -30,6 +32,11 @@ namespace Tiling_Engine
         {
             _grid = g;
             _citys = c;
+        }
+
+        public Label ReturnLabel(int x, int y)
+        {
+            return _grid[x, y].ReturnLabel();
         }
 
         public void SetMouseColor(int c)
@@ -70,6 +77,11 @@ namespace Tiling_Engine
         public void HideCell(int x, int y, bool b)
         {
             _grid[x, y].setVisible(b);
+        }
+
+        public int ReturnSize()
+        {
+            return _size;
         }
 
     }

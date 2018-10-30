@@ -13,11 +13,28 @@ namespace Tiling_Engine
     public partial class uxEditor : Form
     {
         private World _map;
+        private FlowLayoutPanel _mapPanel;
 
         public uxEditor()
         {
             InitializeComponent();
+            
+            //new map
             _map = new World();
+            int size = 20; //_map.ReturnSize();
+
+            //flow layout panel
+            _mapPanel = new FlowLayoutPanel();
+            _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
+            this.Controls.Add(_mapPanel);
+
+            for (int i=0; i<size; i++)
+            {
+                for(int j=0; j<size; j++)
+                {
+                    _mapPanel.Controls.Add(_map.ReturnLabel(i, j));
+                }
+            }
         }
 
         public World ReturnMap()
@@ -42,6 +59,7 @@ namespace Tiling_Engine
 
         private void uxBack_Click(object sender, EventArgs e)
         {
+            _map.CreateCity(1, 1);
             this.Close();
         }
 
@@ -55,5 +73,9 @@ namespace Tiling_Engine
             }
         }
 
+        private void uxLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
