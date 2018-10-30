@@ -20,7 +20,7 @@ namespace Tiling_Engine
             _coor = new Tuple<int, int>(x, y);
 
             _label = new Label();
-            _label.BackColor = System.Drawing.Color.Pink;
+            //_label.BackColor = System.Drawing.Color.Pink;
             _label.BorderStyle = BorderStyle.FixedSingle;
             _label.MaximumSize = new System.Drawing.Size(20, 20);
             _label.Margin = new Padding(0, 0, 0, 0);

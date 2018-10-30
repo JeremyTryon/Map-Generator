@@ -26,13 +26,25 @@ namespace Tiling_Engine
             //flow layout panel
             _mapPanel = new FlowLayoutPanel();
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
+           /* _mapPanel.Click += (s, e) =>
+            {
+                // I will clean this up at another time
+                _map.CellClick(Convert.ToInt32(Math.Floor(Convert.ToDecimal(MousePosition.X / 20))), Convert.ToInt32(Math.Floor(Convert.ToDecimal(MousePosition.Y / 20))));
+            };
+            */
             this.Controls.Add(_mapPanel);
 
             for (int i=0; i<size; i++)
             {
                 for(int j=0; j<size; j++)
                 {
-                    _mapPanel.Controls.Add(_map.ReturnLabel(i, j));
+                    Label temp = _map.ReturnLabel(i, j);
+                    _mapPanel.Controls.Add(temp);
+                    temp.Click += (s, e) =>
+                    {
+                        _map.CellClick(i, j);
+                    };
+                    
                 }
             }
         }
@@ -49,7 +61,7 @@ namespace Tiling_Engine
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            uxRBlank.Checked = true;
         }
 
         private void uxGenerate_Click(object sender, EventArgs e)
@@ -71,11 +83,6 @@ namespace Tiling_Engine
                 _map.SetMouseColor(Convert.ToInt16(button.Tag));
 
             }
-        }
-
-        private void uxLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
