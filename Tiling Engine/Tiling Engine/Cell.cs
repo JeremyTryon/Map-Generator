@@ -20,10 +20,11 @@ namespace Tiling_Engine
             _coor = new Tuple<int, int>(x, y);
 
             _label = new Label();
-            //_label.BackColor = System.Drawing.Color.Pink;
+            _label.BackColor = System.Drawing.Color.LightGray;
             _label.BorderStyle = BorderStyle.FixedSingle;
             _label.MaximumSize = new System.Drawing.Size(20, 20);
             _label.Margin = new Padding(0, 0, 0, 0);
+            _label.Tag = _coor;
 
             _visible = false;
         }
@@ -32,7 +33,7 @@ namespace Tiling_Engine
         {
             if(color == 0)
             {
-                _label.BackColor = System.Drawing.Color.DarkGray;
+                _label.BackColor = System.Drawing.Color.LightGray;
             }
             else if (color == 1)
             {
@@ -40,11 +41,11 @@ namespace Tiling_Engine
             }
             else if (color == 2)
             {
-                _label.BackColor = System.Drawing.Color.Green;
+                _label.BackColor = System.Drawing.Color.LightYellow;
             }
             else if (color == 3)
             {
-                _label.BackColor = System.Drawing.Color.LightGray;
+                _label.BackColor = System.Drawing.Color.DarkGray;
             }
             else if (color == 4)
             {

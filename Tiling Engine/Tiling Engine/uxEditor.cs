@@ -26,12 +26,7 @@ namespace Tiling_Engine
             //flow layout panel
             _mapPanel = new FlowLayoutPanel();
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
-           /* _mapPanel.Click += (s, e) =>
-            {
-                // I will clean this up at another time
-                _map.CellClick(Convert.ToInt32(Math.Floor(Convert.ToDecimal(MousePosition.X / 20))), Convert.ToInt32(Math.Floor(Convert.ToDecimal(MousePosition.Y / 20))));
-            };
-            */
+
             this.Controls.Add(_mapPanel);
 
             for (int i=0; i<size; i++)
@@ -42,7 +37,9 @@ namespace Tiling_Engine
                     _mapPanel.Controls.Add(temp);
                     temp.Click += (s, e) =>
                     {
-                        _map.CellClick(i, j);
+                        Tuple<int, int> coor = (Tuple<int,int>)temp.Tag;
+                        _map.CellClick(coor.Item1, coor.Item2);
+
                     };
                     
                 }
