@@ -9,6 +9,7 @@ using System.ComponentModel;
 
 namespace Tiling_Engine
 {
+    [Serializable]
     public class Cell
     {
         private Label _label;

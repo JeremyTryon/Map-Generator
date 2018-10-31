@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;  // Add this for serialization
+using System.IO;    // Add this for serialization
 
 namespace Tiling_Engine
 {
@@ -59,8 +61,27 @@ namespace Tiling_Engine
 
         private void uxSandQ_Click(object sender, EventArgs e)
         {
-
+            SaveFile();
             this.Close();
+        }
+
+        private void SaveFile()
+        {
+            BinaryFormatter fo = new BinaryFormatter();
+            using (FileStream f = new FileStream("Data.stn", FileMode.Create, FileAccess.Write))
+            {
+                fo.Serialize(f, _map);
+            }
+        }
+
+        private void LoadFile()
+        {
+            BinaryFormatter fo = new BinaryFormatter();
+            using (FileStream f = new FileStream("Data.stn",
+                FileMode.Open, FileAccess.Read))
+            {
+                _map = (World)fo.Deserialize(f);
+            }
         }
     }
 }

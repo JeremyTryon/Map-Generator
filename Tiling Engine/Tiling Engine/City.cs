@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Tiling_Engine
 {
+    [Serializable]
     public class City
     {
         private Cell[,] _grid;
