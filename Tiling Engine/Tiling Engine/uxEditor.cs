@@ -21,11 +21,18 @@ namespace Tiling_Engine
             
             //new map
             _map = new World();
-            int size = 20; //_map.ReturnSize();
+            int size = _map.ReturnSize();
+
 
             //flow layout panel
             _mapPanel = new FlowLayoutPanel();
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
+            _mapPanel.AutoScroll = true;
+            _mapPanel.Dock = System.Windows.Forms.DockStyle.None;
+            _mapPanel.AutoSize = true;
+            _mapPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
+
 
             this.Controls.Add(_mapPanel);
 
@@ -44,6 +51,20 @@ namespace Tiling_Engine
                     
                 }
             }
+
+            //buttons
+            uxBack.Location = new Point(this.Size.Width - uxBack.Size.Width, 426);
+            uxGenerate.Location = new Point(this.Size.Width - uxBack.Size.Width, 477);
+
+            //radiobuttons
+            uxRBlank.Location = new Point(this.Size.Width - uxRBlank.Size.Width, 24);
+            uxRGrass.Location = new Point(this.Size.Width - uxRBlank.Size.Width, 51);
+            uxRDesert.Location = new Point(this.Size.Width - uxRBlank.Size.Width, 78);
+            uxRMountains.Location = new Point(this.Size.Width - uxRBlank.Size.Width, 105);
+            uxROcean.Location = new Point(this.Size.Width - uxRBlank.Size.Width, 132);
+            uxRTundra.Location = new Point(this.Size.Width - uxRBlank.Size.Width, 160);
+            uxRCity.Location = new Point(this.Size.Width - uxRBlank.Size.Width, 187);
+
         }
 
         public World ReturnMap()

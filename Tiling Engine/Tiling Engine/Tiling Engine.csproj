@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Cell.cs" />
     <Compile Include="City.cs" />
+    <Compile Include="SizeInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SizeInput.Designer.cs">
+      <DependentUpon>SizeInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="uxEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
       <DependentUpon>uxMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="World.cs" />
+    <EmbeddedResource Include="SizeInput.resx">
+      <DependentUpon>SizeInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uxEditor.resx">
       <DependentUpon>uxEditor.cs</DependentUpon>
     </EmbeddedResource>

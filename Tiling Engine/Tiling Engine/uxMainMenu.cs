@@ -40,6 +40,7 @@ namespace Tiling_Engine
         private void uxLoadM_Click(object sender, EventArgs e)
         {
             //_map = file read in
+            LoadFile();
 
             uxEditM.Enabled = true;
             uxViewM.Enabled = true;
@@ -77,8 +78,7 @@ namespace Tiling_Engine
         private void LoadFile()
         {
             BinaryFormatter fo = new BinaryFormatter();
-            using (FileStream f = new FileStream("Data.stn",
-                FileMode.Open, FileAccess.Read))
+            using (FileStream f = new FileStream("Data.stn", FileMode.Open, FileAccess.Read))
             {
                 _map = (World)fo.Deserialize(f);
             }

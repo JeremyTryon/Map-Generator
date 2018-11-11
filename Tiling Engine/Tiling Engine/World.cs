@@ -13,11 +13,19 @@ namespace Tiling_Engine
         private Cell[,] _grid;
         private List<City> _citys;
         private int _mouseColor;
-        private int _size = 50;
+        private int _size;
         private const int _citysize = 30;
 
         public World()
         {
+            uxSizeInput dlg = new uxSizeInput();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                _size = dlg.GetSize();
+            }
+
+
             _grid = new Cell[_size, _size];
             for(int i = 0; i<_size; i++)
             {
@@ -29,10 +37,11 @@ namespace Tiling_Engine
             _citys = new List<City>();
         }
 
-        public World(Cell[,] g, List<City> c)
+        public World(Cell[,] g, List<City> c, int size)
         {
             _grid = g;
             _citys = c;
+            _size = size;
         }
 
         public Label ReturnLabel(int x, int y)
