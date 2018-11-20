@@ -74,13 +74,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 253);
+            this.ClientSize = new System.Drawing.Size(280, 263);
             this.Controls.Add(this.uxSizeError);
             this.Controls.Add(this.uxSizeExplanation);
             this.Controls.Add(this.uxTextSize);
             this.Controls.Add(this.uxConfirmSize);
             this.Name = "uxSizeInput";
-            this.Text = "SizeInput";
+            this.Text = "Input Map Size";
             this.ResumeLayout(false);
             this.PerformLayout();
 

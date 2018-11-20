@@ -155,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(987, 590);
+            this.ClientSize = new System.Drawing.Size(990, 590);
             this.Controls.Add(this.uxRCity);
             this.Controls.Add(this.uxRTundra);
             this.Controls.Add(this.uxROcean);

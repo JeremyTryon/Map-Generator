@@ -20,11 +20,8 @@ namespace Tiling_Engine
         {
             uxSizeInput dlg = new uxSizeInput();
 
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                _size = dlg.GetSize();
-            }
-
+            dlg.ShowDialog();           
+            _size = dlg.GetSize();
 
             _grid = new Cell[_size, _size];
             for(int i = 0; i<_size; i++)

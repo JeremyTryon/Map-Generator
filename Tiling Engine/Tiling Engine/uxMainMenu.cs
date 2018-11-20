@@ -23,7 +23,6 @@ namespace Tiling_Engine
             InitializeComponent();
             uxEditM.Enabled = false;
             uxViewM.Enabled = false;
-            _map = new World();
         }
 
         private void uxNewM_Click(object sender, EventArgs e)

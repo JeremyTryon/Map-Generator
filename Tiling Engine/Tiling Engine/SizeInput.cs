@@ -30,6 +30,8 @@ namespace Tiling_Engine
             if (value>0 && value < 1000)
             {
                 _globlesize = value;
+                this.Close();
+
             }
             else
             {
