@@ -28,6 +28,7 @@ namespace Tiling_Engine
         private void uxNewM_Click(object sender, EventArgs e)
         {
             editor = new uxEditor();
+            editor.MakeNew();
             this.Hide();
             editor.ShowDialog();
             _map = editor.ReturnMap();
@@ -38,7 +39,6 @@ namespace Tiling_Engine
 
         private void uxLoadM_Click(object sender, EventArgs e)
         {
-            //_map = file read in
             LoadFile();
 
             uxEditM.Enabled = true;
@@ -48,7 +48,7 @@ namespace Tiling_Engine
         private void uxEditM_Click(object sender, EventArgs e)
         {
             this.Hide();
-            editor.SetMap(_map);
+            //editor.SetMap(_map);
             editor.ShowDialog();
             _map = editor.ReturnMap();
             this.Show();
@@ -67,19 +67,39 @@ namespace Tiling_Engine
 
         private void SaveFile()
         {
-            BinaryFormatter fo = new BinaryFormatter();
-            using (FileStream f = new FileStream("Data.stn", FileMode.Create, FileAccess.Write))
+            string path;
+            SaveFileDialog saveFile = new SaveFileDialog();
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                fo.Serialize(f, _map);
+                path = saveFile.FileName;
+                bool append = false;
+
+                using (Stream stream = File.Open(path, append ? FileMode.Append : FileMode.Create))
+                {
+                    BinaryFormatter binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    binaryFormatter.Serialize(stream, _map);
+                }
             }
         }
 
         private void LoadFile()
         {
-            BinaryFormatter fo = new BinaryFormatter();
-            using (FileStream f = new FileStream("Data.stn", FileMode.Open, FileAccess.Read))
+            editor = new uxEditor();
+            string path;
+            OpenFileDialog openFile = new OpenFileDialog();
+
+            if (openFile.ShowDialog() == DialogResult.OK)
             {
-                _map = (World)fo.Deserialize(f);
+                path = openFile.FileName;
+
+                using (Stream stream = File.Open(path, FileMode.Open))
+                {
+                    BinaryFormatter binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    _map =  (World)binaryFormatter.Deserialize(stream);
+                    editor.SetMap(_map);
+
+                }
             }
         }
     }

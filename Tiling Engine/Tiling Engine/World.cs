@@ -46,6 +46,11 @@ namespace Tiling_Engine
             return _grid[x, y].ReturnLabel();
         }
 
+        public Label ReturnKnownLabel(int x, int y)
+        {
+            return _grid[x, y].ReturnKnownLabel();
+        }
+
         public void SetMouseColor(int c)
         {
             _mouseColor = c;

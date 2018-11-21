@@ -12,9 +12,12 @@ namespace Tiling_Engine
     [Serializable]
     public class Cell
     {
+        [NonSerialized]
         private Label _label;
+
         private bool _visible;
         private Tuple<int, int> _coor;
+        private int _color = 0;
 
         public Cell(int x, int y)
         {
@@ -32,6 +35,7 @@ namespace Tiling_Engine
 
         public void ChangeColor(int color)
         {
+            _color = color;
             if(color == 0)
             {
                 _label.BackColor = System.Drawing.Color.LightGray;
@@ -65,6 +69,18 @@ namespace Tiling_Engine
 
         public Label ReturnLabel()
         {
+            return _label;
+        }
+
+        public Label ReturnKnownLabel()
+        {
+            _label = new Label();
+            _label.BorderStyle = BorderStyle.FixedSingle;
+            _label.MaximumSize = new System.Drawing.Size(20, 20);
+            _label.Margin = new Padding(0, 0, 0, 0);
+            _label.Tag = _coor;
+
+            ChangeColor(_color);
             return _label;
         }
 
