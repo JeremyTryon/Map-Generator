@@ -17,48 +17,109 @@ namespace Tiling_Engine
 
         private bool _visible;
         private Tuple<int, int> _coor;
-        private int _color = 0;
+        private int _color;
 
         public Cell(int x, int y)
         {
             _coor = new Tuple<int, int>(x, y);
+            _color = 0;
 
             _label = new Label();
-            _label.BackColor = System.Drawing.Color.LightGray;
+            _label.BackColor = System.Drawing.Color.DarkGray;
             _label.BorderStyle = BorderStyle.FixedSingle;
             _label.MaximumSize = new System.Drawing.Size(20, 20);
             _label.Margin = new Padding(0, 0, 0, 0);
             _label.Tag = _coor;
 
-            _visible = false;
+            _visible = true;
         }
 
         public void ChangeColor(int color)
         {
-            _color = color;
+            
             if(color == 0)
             {
-                _label.BackColor = System.Drawing.Color.LightGray;
+                _color = color;
+                setVisible(true);
+                _label.BackColor = System.Drawing.Color.DarkGray;
             }
             else if (color == 1)
             {
+                _color = color;
+                setVisible(true);
                 _label.BackColor = System.Drawing.Color.Green;
             }
             else if (color == 2)
             {
-                _label.BackColor = System.Drawing.Color.LightYellow;
+                _color = color;
+                setVisible(true);
+                _label.BackColor = System.Drawing.Color.Yellow;
             }
             else if (color == 3)
             {
-                _label.BackColor = System.Drawing.Color.DarkGray;
+                _color = color;
+                setVisible(true);
+                _label.BackColor = System.Drawing.Color.Brown;
             }
             else if (color == 4)
             {
+                _color = color;
+                setVisible(true);
                 _label.BackColor = System.Drawing.Color.Blue;
             }
             else if (color == 5)
             {
+                _color = color;
+                setVisible(true);
                 _label.BackColor = System.Drawing.Color.White;
+            }
+            else if (color == 6)
+            {
+                setVisible(true);
+                if (_color == 1)
+                {
+                    _label.BackColor = System.Drawing.Color.Green;
+                }
+                else if (_color == 2)
+                {
+                    _label.BackColor = System.Drawing.Color.Yellow;
+                }
+                else if (_color == 3)
+                {
+                    _label.BackColor = System.Drawing.Color.Brown;
+                }
+                else if (_color == 4)
+                {
+                    _label.BackColor = System.Drawing.Color.Blue;
+                }
+                else if (_color == 5)
+                {
+                    _label.BackColor = System.Drawing.Color.White;
+                }
+            }
+            else if (color == 7)
+            {
+                setVisible(false);
+                if (_color == 1)
+                {
+                    _label.BackColor = System.Drawing.Color.FromArgb(100, Color.Green);
+                }
+                else if (_color == 2)
+                {
+                    _label.BackColor = System.Drawing.Color.FromArgb(100, Color.Yellow);
+                }
+                else if (_color == 3)
+                {
+                    _label.BackColor = System.Drawing.Color.FromArgb(100, Color.Brown);
+                }
+                else if (_color == 4)
+                {
+                    _label.BackColor = System.Drawing.Color.FromArgb(100, Color.Blue);
+                }
+                else if (_color == 5)
+                {
+                    _label.BackColor = System.Drawing.Color.LightGray;
+                }
             }
         }
 
@@ -81,6 +142,14 @@ namespace Tiling_Engine
             _label.Tag = _coor;
 
             ChangeColor(_color);
+            if (IsVisible())
+            {
+                ChangeColor(6);
+            }
+            else
+            {
+                ChangeColor(7);
+            }
             return _label;
         }
 

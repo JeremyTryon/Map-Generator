@@ -15,7 +15,7 @@ namespace Tiling_Engine
     public partial class uxMainMenu : Form
     {
         private uxEditor editor;
-        //private uxViewer viewer;
+        private uxViewer viewer;
         private World _map;
 
         public uxMainMenu()
@@ -35,6 +35,7 @@ namespace Tiling_Engine
             this.Show();
             uxEditM.Enabled = true;
             uxViewM.Enabled = true;
+            viewer = new uxViewer();
         }
 
         private void uxLoadM_Click(object sender, EventArgs e)
@@ -43,12 +44,14 @@ namespace Tiling_Engine
 
             uxEditM.Enabled = true;
             uxViewM.Enabled = true;
+            viewer = new uxViewer();
         }
 
         private void uxEditM_Click(object sender, EventArgs e)
         {
+            editor = new uxEditor();
             this.Hide();
-            //editor.SetMap(_map);
+            editor.SetMap(_map);
             editor.ShowDialog();
             _map = editor.ReturnMap();
             this.Show();
@@ -56,7 +59,12 @@ namespace Tiling_Engine
 
         private void uxViewM_Click(object sender, EventArgs e)
         {
-            //viewer.SetMap(_map);
+            viewer = new uxViewer();
+            this.Hide();
+            viewer.SetMap(_map);
+            viewer.ShowDialog();
+            _map = viewer.ReturnMap();
+            this.Show();
         }
 
         private void uxSandQ_Click(object sender, EventArgs e)
@@ -85,7 +93,6 @@ namespace Tiling_Engine
 
         private void LoadFile()
         {
-            editor = new uxEditor();
             string path;
             OpenFileDialog openFile = new OpenFileDialog();
 
@@ -96,9 +103,7 @@ namespace Tiling_Engine
                 using (Stream stream = File.Open(path, FileMode.Open))
                 {
                     BinaryFormatter binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                    _map =  (World)binaryFormatter.Deserialize(stream);
-                    editor.SetMap(_map);
-
+                    _map = (World)binaryFormatter.Deserialize(stream);
                 }
             }
         }

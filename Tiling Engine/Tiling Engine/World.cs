@@ -66,6 +66,11 @@ namespace Tiling_Engine
             _grid[x, y].ChangeColor(_mouseColor);
         }
 
+        public bool ReturnVisiblity(int x, int y)
+        {
+            return _grid[x, y].IsVisible();
+        }
+
         public void CreateCity(int x, int y)
         {
             _citys.Add(new City(x, y, _citysize));
@@ -84,11 +89,6 @@ namespace Tiling_Engine
         {
             Tuple<int, int> temp = new Tuple<int, int>(x, y);
             _citys.RemoveAll(c => c.GetLocation() == temp);
-        }
-
-        public void HideCell(int x, int y, bool b)
-        {
-            _grid[x, y].setVisible(b);
         }
 
         public int ReturnSize()

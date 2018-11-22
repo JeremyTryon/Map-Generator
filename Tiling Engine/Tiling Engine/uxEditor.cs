@@ -38,7 +38,7 @@ namespace Tiling_Engine
             _mapPanel = new FlowLayoutPanel();
             FlowLayoutPanel outerPanel = new FlowLayoutPanel();
 
-            outerPanel.Size = new System.Drawing.Size((20 * 50), (20 * 50));
+            outerPanel.Size = new System.Drawing.Size((this.Height), (this.Height));
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
 
             outerPanel.VerticalScroll.Enabled = true;
@@ -59,6 +59,11 @@ namespace Tiling_Engine
                 {
                     Label temp = _map.ReturnKnownLabel(i, j);
                     _mapPanel.Controls.Add(temp);
+                    temp.Click += (s, e) =>
+                    {
+                        Tuple<int, int> coor = (Tuple<int, int>)temp.Tag;
+                        _map.CellClick(coor.Item1, coor.Item2);    
+                    };
 
                 }
             }
@@ -78,7 +83,7 @@ namespace Tiling_Engine
             _mapPanel = new FlowLayoutPanel();
             FlowLayoutPanel outerPanel = new FlowLayoutPanel();
 
-            outerPanel.Size = new System.Drawing.Size((20 * 50), (20 * 50));
+            outerPanel.Size = new System.Drawing.Size((this.Height), (this.Height));
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
 
             outerPanel.VerticalScroll.Enabled = true;
@@ -103,9 +108,7 @@ namespace Tiling_Engine
                     {
                         Tuple<int, int> coor = (Tuple<int, int>)temp.Tag;
                         _map.CellClick(coor.Item1, coor.Item2);
-
                     };
-
                 }
             }
             objectPlaces();
@@ -123,7 +126,6 @@ namespace Tiling_Engine
 
         private void uxBack_Click(object sender, EventArgs e)
         {
-            _map.CreateCity(1, 1);
             this.Close();
         }
 

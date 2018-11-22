@@ -68,6 +68,18 @@
     <Compile Include="uxMainMenu.Designer.cs">
       <DependentUpon>uxMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="uxPlayerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uxPlayerView.Designer.cs">
+      <DependentUpon>uxPlayerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uxViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uxViewer.Designer.cs">
+      <DependentUpon>uxViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="World.cs" />
     <EmbeddedResource Include="SizeInput.resx">
       <DependentUpon>SizeInput.cs</DependentUpon>
@@ -86,6 +98,12 @@
     </Compile>
     <EmbeddedResource Include="uxMainMenu.resx">
       <DependentUpon>uxMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uxPlayerView.resx">
+      <DependentUpon>uxPlayerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uxViewer.resx">
+      <DependentUpon>uxViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
