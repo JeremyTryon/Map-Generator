@@ -18,6 +18,7 @@ namespace Tiling_Engine
         private bool _visible;
         private Tuple<int, int> _coor;
         private int _color;
+        private int[] _surColors = { 0, 0, 0, 0, 0, 0 };
 
         public Cell(int x, int y)
         {
@@ -156,6 +157,25 @@ namespace Tiling_Engine
         public void setVisible(bool b)
         {
             _visible = b;
+        }
+        public int ReturnColor()
+        {
+            return _color;
+        }
+
+        public void RemoveColor(int color)
+        {
+            _surColors[color] -= 1; 
+        }
+
+        public void AddColor(int color)
+        {
+            _surColors[color] += 1;
+        }
+
+        public int[] RetCA()
+        {
+            return _surColors;
         }
     }
 }
