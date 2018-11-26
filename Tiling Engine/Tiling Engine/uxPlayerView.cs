@@ -41,6 +41,8 @@ namespace Tiling_Engine
             outerPanel.Size = new System.Drawing.Size((this.Height), (this.Height));
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
 
+            outerPanel.BackgroundImage = Properties.Resources.conifer_forest_inner;
+
             outerPanel.VerticalScroll.Enabled = true;
             outerPanel.HorizontalScroll.Enabled = true;
 

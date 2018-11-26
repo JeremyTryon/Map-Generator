@@ -41,6 +41,8 @@ namespace Tiling_Engine
             outerPanel.Size = new System.Drawing.Size((this.Height), (this.Height));
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
 
+            outerPanel.BackgroundImage = Properties.Resources.conifer_forest_inner;
+
             outerPanel.VerticalScroll.Enabled = true;
             outerPanel.HorizontalScroll.Enabled = true;
 
@@ -86,14 +88,14 @@ namespace Tiling_Engine
             outerPanel.Size = new System.Drawing.Size((this.Height), (this.Height));
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
 
+            outerPanel.BackgroundImage = Properties.Resources.conifer_forest_inner;
+
             outerPanel.VerticalScroll.Enabled = true;
             outerPanel.HorizontalScroll.Enabled = true;
 
             outerPanel.AutoScroll = true;
             outerPanel.Dock = System.Windows.Forms.DockStyle.None;
             outerPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-
-
 
             this.Controls.Add(outerPanel);
             outerPanel.Controls.Add(_mapPanel);
@@ -141,8 +143,8 @@ namespace Tiling_Engine
 
         private void objectPlaces()
         {
-            int buttonX = (this.Size.Width - uxBack.Size.Width) - 10;
-            int RBX = (this.Size.Width - uxRBlank.Size.Width) - 55;
+            int buttonX = (this.Height + uxBack.Size.Width) + 20;
+            int RBX = (this.Height + uxRBlank.Size.Width) + 55;
 
             //buttons
             uxBack.Location = new Point(buttonX, 426);

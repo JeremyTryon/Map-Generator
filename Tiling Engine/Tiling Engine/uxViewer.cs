@@ -37,6 +37,8 @@ namespace Tiling_Engine
             outerPanel.Size = new System.Drawing.Size((this.Height), (this.Height));
             _mapPanel.Size = new System.Drawing.Size((20 * size), (20 * size));
 
+            outerPanel.BackgroundImage = Properties.Resources.conifer_forest_inner;
+
             outerPanel.VerticalScroll.Enabled = true;
             outerPanel.HorizontalScroll.Enabled = true;
 
@@ -68,8 +70,8 @@ namespace Tiling_Engine
 
         private void objectPlaces()
         {
-            int buttonX = (this.Size.Width - uxBack.Size.Width) - 55;
-            int RBX = (this.Size.Width - uxRBHide.Size.Width) - 55;
+            int buttonX = (this.Height + uxBack.Size.Width) + 55;
+            int RBX = (this.Height + uxRBHide.Size.Width) + 55;
 
             //buttons
             uxBack.Location = new Point(buttonX, 33);
@@ -99,6 +101,7 @@ namespace Tiling_Engine
         private void uxPView_Click(object sender, EventArgs e)
         {
             _playerview = new uxPlayerView();
+            _playerview.BackgroundImage = Properties.Resources.stone2;
             _playerview.SetMap(_map);
             _playerview.Show();
         }

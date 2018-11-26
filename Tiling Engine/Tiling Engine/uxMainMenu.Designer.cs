@@ -90,7 +90,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(375, 529);
+            this.BackgroundImage = global::Tiling_Engine.Properties.Resources.stone2;
+            this.ClientSize = new System.Drawing.Size(356, 529);
             this.Controls.Add(this.uxSandQ);
             this.Controls.Add(this.uxViewM);
             this.Controls.Add(this.uxEditM);

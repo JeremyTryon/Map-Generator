@@ -165,12 +165,19 @@ namespace Tiling_Engine
 
         public void RemoveColor(int color)
         {
-            _surColors[color] -= 1; 
+
+            if (color < 5)
+            {
+                _surColors[color] -= 1;
+            } 
         }
 
         public void AddColor(int color)
         {
-            _surColors[color] += 1;
+            if (color < 5)
+            {
+                _surColors[color] += 1;
+            }
         }
 
         public int[] RetCA()

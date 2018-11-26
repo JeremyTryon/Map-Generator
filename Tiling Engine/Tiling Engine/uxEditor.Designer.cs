@@ -155,6 +155,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Tiling_Engine.Properties.Resources.stone2;
             this.ClientSize = new System.Drawing.Size(990, 590);
             this.Controls.Add(this.uxRCity);
             this.Controls.Add(this.uxRTundra);
