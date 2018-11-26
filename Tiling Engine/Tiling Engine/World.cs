@@ -76,12 +76,12 @@ namespace Tiling_Engine
 
                         if ((i < (_size / 5)) || (i > (_size - (_size / 5))))
                         {
-                            tundraVal += 75;
+                            tundraVal += 200;
                         }
 
                         if ((i < (3 * (_size / 5))) && (i > (2 * (_size / 5))))
                         {
-                            desertVal += 60;
+                            desertVal += 80;
                         }
 
                         if ((j < (_size / 5)) || (j > (_size - (_size / 5))))
@@ -101,7 +101,7 @@ namespace Tiling_Engine
                         }
                         for(int d = 0; d<surVals[2]; d++)
                         {
-                            desertVal += 150;
+                            desertVal += 120;
                         }
                         for(int m = 0; m<surVals[3]; m++)
                         {
@@ -113,7 +113,7 @@ namespace Tiling_Engine
                         }
                         for(int t=0; t<surVals[5]; t++)
                         {
-                            tundraVal += 120;
+                            tundraVal += 175;
                         }
 
                         //color change
