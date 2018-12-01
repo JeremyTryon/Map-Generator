@@ -37,11 +37,12 @@
             this.uxROcean = new System.Windows.Forms.RadioButton();
             this.uxRTundra = new System.Windows.Forms.RadioButton();
             this.uxRCity = new System.Windows.Forms.RadioButton();
+            this.uxClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uxGenerate
             // 
-            this.uxGenerate.Location = new System.Drawing.Point(812, 426);
+            this.uxGenerate.Location = new System.Drawing.Point(812, 394);
             this.uxGenerate.Name = "uxGenerate";
             this.uxGenerate.Size = new System.Drawing.Size(125, 32);
             this.uxGenerate.TabIndex = 1;
@@ -51,7 +52,7 @@
             // 
             // uxBack
             // 
-            this.uxBack.Location = new System.Drawing.Point(812, 477);
+            this.uxBack.Location = new System.Drawing.Point(810, 519);
             this.uxBack.Name = "uxBack";
             this.uxBack.Size = new System.Drawing.Size(125, 32);
             this.uxBack.TabIndex = 2;
@@ -150,6 +151,16 @@
             this.uxRCity.UseVisualStyleBackColor = true;
             this.uxRCity.CheckedChanged += new System.EventHandler(this.uxBiomes_CheckedChanged);
             // 
+            // uxClear
+            // 
+            this.uxClear.Location = new System.Drawing.Point(814, 453);
+            this.uxClear.Name = "uxClear";
+            this.uxClear.Size = new System.Drawing.Size(123, 32);
+            this.uxClear.TabIndex = 12;
+            this.uxClear.Text = "Clear";
+            this.uxClear.UseVisualStyleBackColor = true;
+            this.uxClear.Click += new System.EventHandler(this.uxClear_Click);
+            // 
             // uxEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,6 +169,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Tiling_Engine.Properties.Resources.stone2;
             this.ClientSize = new System.Drawing.Size(990, 590);
+            this.Controls.Add(this.uxClear);
             this.Controls.Add(this.uxRCity);
             this.Controls.Add(this.uxRTundra);
             this.Controls.Add(this.uxROcean);
@@ -185,6 +197,7 @@
         private System.Windows.Forms.RadioButton uxROcean;
         private System.Windows.Forms.RadioButton uxRTundra;
         private System.Windows.Forms.RadioButton uxRCity;
+        private System.Windows.Forms.Button uxClear;
     }
 }
 

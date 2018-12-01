@@ -34,11 +34,28 @@ namespace Tiling_Engine
             _citys = new List<City>();
         }
 
-        public World(Cell[,] g, List<City> c, int size)
+        public World(int size)
         {
-            _grid = g;
-            _citys = c;
             _size = size;
+            _grid = new Cell[_size, _size];
+            for (int i = 0; i < _size; i++)
+            {
+                for (int j = 0; j < _size; j++)
+                {
+                    _grid[i, j] = new Cell(i, j);
+                }
+            }
+            _citys = new List<City>();
+        }
+
+        public bool ReturnVisiblity(int x, int y)
+        {
+            return _grid[x, y].IsVisible();
+        }
+
+        public int ReturnSize()
+        {
+            return _size;
         }
 
         public Label ReturnLabel(int x, int y)
@@ -297,19 +314,9 @@ namespace Tiling_Engine
             }
         }
 
-        public bool ReturnVisiblity(int x, int y)
-        {
-            return _grid[x, y].IsVisible();
-        }
-
         public void CreateCity(int x, int y)
         {
             _citys.Add(new City(x, y, _citysize));
-        }
-
-        public int ReturnSize()
-        {
-            return _size;
         }
 
         public void EditCity(int x, int y)

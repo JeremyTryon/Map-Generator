@@ -71,7 +71,7 @@ namespace Tiling_Engine
         private void objectPlaces()
         {
             int buttonX = (this.Height + uxBack.Size.Width) + 55;
-            int RBX = (this.Height + uxRBHide.Size.Width) + 55;
+            int RBX = (this.Height + uxRBHide.Size.Width) + 20;
 
             //buttons
             uxBack.Location = new Point(buttonX, 33);
@@ -80,6 +80,8 @@ namespace Tiling_Engine
             //radiobuttons
             uxRBHide.Location = new Point(RBX, 185);
             uxRBShow.Location = new Point(RBX, 231);
+
+            this.Width = buttonX + 200;
         }
 
         private void uxVis_CheckedChanged(object sender, EventArgs e)
