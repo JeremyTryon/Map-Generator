@@ -14,7 +14,7 @@ namespace Tiling_Engine
     {
         private World _map = null;
         private FlowLayoutPanel _mapPanel;
-        FlowLayoutPanel _outerPanel;
+        private FlowLayoutPanel _outerPanel;
 
         public uxEditor()
         {
