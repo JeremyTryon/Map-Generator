@@ -15,6 +15,7 @@ namespace Tiling_Engine
         private World _map = null;
         private FlowLayoutPanel _mapPanel;
         private uxPlayerView _playerview;
+        bool openPlayer;
 
         public uxViewer()
         {
@@ -97,7 +98,10 @@ namespace Tiling_Engine
         private void uxBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            _playerview.Close();
+            if (openPlayer)
+            {
+                _playerview.Close();
+            }
         }
 
         private void uxPView_Click(object sender, EventArgs e)
@@ -105,12 +109,14 @@ namespace Tiling_Engine
             _playerview = new uxPlayerView();
             _playerview.BackgroundImage = Properties.Resources.stone2;
             _playerview.SetMap(_map);
+            openPlayer = true;
             _playerview.Show();
         }
 
         private void uxViewer_Load(object sender, EventArgs e)
         {
             uxRBHide.Checked = true;
+            openPlayer = false;
         }
 
         public World ReturnMap()

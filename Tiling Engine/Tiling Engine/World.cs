@@ -114,7 +114,6 @@ namespace Tiling_Engine
                         for(int g =0; g<surVals[1]; g++)
                         {
                             grassVal += 200;
-
                         }
                         for(int d = 0; d<surVals[2]; d++)
                         {
@@ -154,7 +153,6 @@ namespace Tiling_Engine
                                 _mouseColor = probColors[k].Key + 1;
                                 CellClick(i, j);
                                 k = probColors.Count;
-                                //break;
                             }
                         }
                     }

@@ -107,7 +107,8 @@ namespace Tiling_Engine
                 }
                 else if (_color == 2)
                 {
-                    _label.BackColor = System.Drawing.Color.FromArgb(100, Color.Yellow);
+                    _label.BackColor = System.Drawing.Color.Orange;
+                    //_label.BackColor = System.Drawing.Color.FromArgb(100, Color.Yellow);
                 }
                 else if (_color == 3)
                 {
