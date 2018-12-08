@@ -34,7 +34,7 @@ namespace Tiling_Engine
             Size max = SystemInformation.MaxWindowTrackSize;
 
             this.Width = max.Width;
-            this.Height = max.Height;
+            this.Height = max.Height - 100;
 
             //flow layout panel
             _mapPanel = new FlowLayoutPanel();
@@ -81,7 +81,7 @@ namespace Tiling_Engine
             Size max = SystemInformation.MaxWindowTrackSize;
 
             this.Width = max.Width;
-            this.Height = max.Height;
+            this.Height = max.Height - 100;
 
             //flow layout panel
             _mapPanel = new FlowLayoutPanel();
@@ -127,7 +127,7 @@ namespace Tiling_Engine
             Size max = SystemInformation.MaxWindowTrackSize;
 
             this.Width = max.Width;
-            this.Height = max.Height;
+            this.Height = max.Height - 100;
 
             //flow layout panel
             _mapPanel = new FlowLayoutPanel();

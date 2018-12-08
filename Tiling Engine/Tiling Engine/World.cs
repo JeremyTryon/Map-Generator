@@ -91,9 +91,14 @@ namespace Tiling_Engine
                         int tundraVal = 5;
                         int[] surVals = _grid[i,j].RetCA();
 
-                        if ((i < (_size / 5)) || (i > (_size - (_size / 5))))
+                        if ((i < (_size / 7)))
                         {
-                            tundraVal += 200;
+                            tundraVal += 250;
+                        }    
+                            
+                        if(i > (_size - (_size / 7)))
+                        {
+                            tundraVal += 600;
                         }
 
                         if ((i < (3 * (_size / 5))) && (i > (2 * (_size / 5))))
@@ -117,7 +122,7 @@ namespace Tiling_Engine
                         }
                         for(int d = 0; d<surVals[2]; d++)
                         {
-                            desertVal += 120;
+                            desertVal += 140;
                         }
                         for(int m = 0; m<surVals[3]; m++)
                         {
@@ -125,11 +130,11 @@ namespace Tiling_Engine
                         }
                         for(int o =0; o<surVals[4]; o++)
                         {
-                            oceanVal += 120;
+                            oceanVal += 140;
                         }
                         for(int t=0; t<surVals[5]; t++)
                         {
-                            tundraVal += 175;
+                            tundraVal += 250;
                         }
 
                         //color change
